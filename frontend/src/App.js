@@ -22,7 +22,6 @@ function App() {
         <Routes>
           <Route path='/' element={<PrivateRoute><Home /></PrivateRoute>} />
           <Route path='/about' element={<PrivateRoute><About /></PrivateRoute>} />
-          <Route path='/create' element={<PrivateRoute><Create /></PrivateRoute>} />
           <Route path='/profile' element={<PrivateRoute><Profile /></PrivateRoute>} />
           <Route path='/project' element={<PrivateRoute><Project /></PrivateRoute>} />
           <Route path='/skills' element={<PrivateRoute><Skills /></PrivateRoute>} />

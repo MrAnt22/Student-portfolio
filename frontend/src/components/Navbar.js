@@ -67,15 +67,6 @@ const Navbar = () =>{
                  </>
                 )}
 
-
-                <li>
-                  <Link
-                    to="/contact"
-                    className={path === "/contact" ? "active" : ""}
-                  >
-                    Контакти
-                  </Link>
-                </li>
               </ul>
 
               <a
