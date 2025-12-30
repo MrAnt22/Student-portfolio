@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import AuthContext from "./context/AuthContext";
-import Box from "@mui/material/Box";
+import "../Auth.css";
 
 const LoginPage = () => {
   const { loginUser } = useContext(AuthContext);
@@ -13,24 +13,31 @@ const LoginPage = () => {
   };
 
   return (
-    <div>
-      <section class="our-team">
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Username"
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <br/><br/>
-        <button type="submit" className="btn btn-outline-success">Login</button>
-      </form>
-      </section>
+    <div className="auth-page">
+      <div className="auth-card">
+        <h2>Увійти</h2>
+
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Username"
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Пароль"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+
+          <button type="submit" className="auth-btn">
+            Увійти
+          </button>
+        </form>
+
+        <div className="auth-link">
+          Немає акаунта? <a href="/register">Зареєструватися</a>
+        </div>
+      </div>
     </div>
   );
 };

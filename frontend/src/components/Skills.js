@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import AxiosInstance from "./Axios";
+import "../Skills.css"
 
 const Skills = () =>{
     const [skills, setSkills] = useState([]);
     const [newSkill, setNewSkill] = useState({ name: "", level: 2 });
+    const [editingSkill, setEditingSkill] = useState(null);
 
     useEffect(() => {
         const fetchSkills = async () => {
@@ -29,30 +31,67 @@ const Skills = () =>{
     };
 
     const categorize = (skills) => ({
-        veryGood: skills.filter((s) => s.level === 5),
-        medium: skills.filter((s) => s.level === 4),
-        ok: skills.filter((s) => s.level === 3),
-        learning: skills.filter((s) => s.level <= 2),
-    });
+        veryGood: skills.filter((s) => Number(s.level) === 5),
+        medium: skills.filter((s) => Number(s.level) === 4),
+        ok: skills.filter((s) => Number(s.level) === 3),
+        learning: skills.filter((s) => Number(s.level) <= 2),
+        });
 
     const { veryGood, medium, ok, learning } = categorize(skills);
 
     const renderSkillList = (list) =>
         list.length > 0 ? (
-        <ul className="skill-list">
+            <ul className="skill-list">
             {list.map((skill) => (
-            <li key={skill.id}>
-                {skill.name} <span className="text-muted">({skill.level})</span>
-            </li>
+                <li key={skill.id} className="skill-item">
+                <span>
+                    {skill.name} <span className="text-muted">({skill.level})</span>
+                </span>
+
+                <div className="skill-actions">
+
+                    <button
+                    className="btn btn-sm btn-outline-danger"
+                    onClick={() => handleDeleteSkill(skill.id)}
+                    >
+                    🗑
+                    </button>
+                </div>
+                </li>
             ))}
-        </ul>
+            </ul>
         ) : (
-        <p className="text-muted">+ Перелік навичок</p>
+            <p className="text-muted">+ Перелік навичок</p>
         );
+
+        const handleDeleteSkill = async (id) => {
+  try {
+        await AxiosInstance.delete(`api/skills/${id}/`);
+        setSkills(skills.filter(s => s.id !== id));
+    } catch (e) {
+        console.error("Помилка видалення:", e);
+    }
+    };
+
+    const handleSaveEdit = async () => {
+        try {
+            const res = await AxiosInstance.put(
+            `api/skills/${editingSkill.id}/`,
+            editingSkill
+            );
+            setSkills(skills.map(s => s.id === res.data.id ? res.data : s));
+            setEditingSkill(null);
+        } catch (e) {
+            console.error("Помилка редагування:", e);
+        }
+    };
+
+    
 
     return(
         <>
        <section class="featured-product">
+        
         <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -136,6 +175,7 @@ const Skills = () =>{
                 </div>
             </div>
             </div>
+            
         </div>
         </div>
     </section>

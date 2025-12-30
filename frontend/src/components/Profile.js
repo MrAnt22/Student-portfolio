@@ -1,7 +1,7 @@
 import { React, useState, useContext, useEffect, useForm } from 'react'
 import AuthContext from "./context/AuthContext"
 import { useNavigate } from 'react-router-dom';
-import Button from '@mui/material/Button';
+import "../Porfile.css"
 
 const Profile = () =>{
     const { user, updateUser } = useContext(AuthContext);
@@ -95,6 +95,8 @@ const Profile = () =>{
                 Зберегти зміни
               </button>
 
+              <button type="submit"
+                className="btn btn-outline-dark" onClick={() => navigate(-1)}>Back</button> 
               <hr />
 
               <div className="text-center">
@@ -110,6 +112,7 @@ const Profile = () =>{
               </div>
             </div>
           </div>
+
 
           <div className="col-lg-8">
             <div className="profile-form shadow-sm">

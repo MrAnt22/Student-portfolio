@@ -1,4 +1,4 @@
-import {Link, useLocation} from "react-router-dom"
+import {Link, useLocation, useNavigate} from "react-router-dom"
 import PropTypes from 'prop-types';
 import * as React from 'react';
 import AuthContext from "./context/AuthContext";
@@ -8,6 +8,7 @@ const Navbar = () =>{
   const path = location.pathname
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const {user, logoutUser} = React.useContext(AuthContext)
+  const navigate = useNavigate()
 
     return(
         <>

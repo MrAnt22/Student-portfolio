@@ -12,7 +12,6 @@ class SkillSerializer(serializers.ModelSerializer):
         model = Skill
         fields = ['id', 'name', 'level']
 
-
 class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
 
@@ -40,7 +39,7 @@ class UserSerializer(serializers.ModelSerializer):
 class UpdateUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
-        fields = ['first_name', 'last_name', 'email', 'faculty', 'group', 'year_of_study', 'specialization', 'github_link', 'linkedin_link', 'bio', 'profile_photo']
+        fields = ['first_name', 'last_name', 'email', 'faculty', 'group', 'year_of_study', 'specialization', 'github_link', 'linkedin_link', 'bio', 'profile_photo', 'username']
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod

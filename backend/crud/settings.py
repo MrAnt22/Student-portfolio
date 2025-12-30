@@ -66,6 +66,8 @@ REST_FRAMEWORK = {
     ),
 }
 
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
+
 AUTH_USER_MODEL = "api.Student"
 
 ROOT_URLCONF = 'crud.urls'

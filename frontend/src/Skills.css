@@ -1,0 +1,30 @@
+.modal-backdrop-custom {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.edit-modal {
+  width: 400px;
+}
+
+.skill-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+}
+
+.skill-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.skill-actions button {
+  padding: 2px 6px;
+  font-size: 12px;
+}

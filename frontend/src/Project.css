@@ -1,0 +1,153 @@
+.github-page {
+  padding: 60px 0;
+  min-height: 100vh;
+  background: #f8f9ff;
+}
+
+.github-container {
+  max-width: 1300px;
+  margin: auto;
+}
+
+.github-title {
+  font-size: 36px;
+  font-weight: 900;
+  margin-bottom: 25px;
+}
+
+.github-title em {
+  color: #b947ff;
+  font-style: normal;
+}
+
+.metrics-grid {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.metric-card {
+  flex: 1;
+  min-width: 230px;
+  background: white;
+  border-radius: 18px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(120, 40, 255, 0.13);
+  transition: 0.3s;
+}
+
+.metric-card:hover {
+  transform: translateY(-5px);
+}
+
+.metric-number {
+  font-size: 42px;
+  font-weight: 900;
+  color: #a447ff;
+}
+
+.metric-label {
+  font-size: 17px;
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+.repo-grid {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.repo-card {
+  flex: 1 1 calc(50% - 20px);
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.repo-card:hover {
+  transform: translateY(-5px);
+}
+
+.repo-card a {
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #4a47ff;
+}
+
+.repo-stars {
+  color: #ffbd2f;
+  font-weight: bold;
+}
+
+.repo-lang {
+  background: #ece9ff;
+  padding: 5px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.chart-box {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  margin-bottom: 40px;
+}
+
+.largest-repo {
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  margin-top: 25px;
+}
+
+.largest-repo h4 {
+  font-weight: 700;
+}
+
+.largest-repo a {
+  color: #6a45ff;
+  font-weight: 600;
+}
+
+.student-projects {
+  margin-top: 50px;
+}
+
+.student-project-card {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+}
+
+.student-project-card h5 {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.student-project-card p {
+  font-size: 15px;
+}
+
+.pie-wrapper {
+  width: 300px; 
+  height: 300px;
+  margin: 0 auto; 
+}
+
+.pie-wrapper canvas {
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
