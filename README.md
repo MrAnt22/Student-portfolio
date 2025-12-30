@@ -6,11 +6,13 @@ Student's portfolio - an open source project built on Django + React stack that 
 
 ## Preview
 
-![Profile Page](./frontend/public/assets/images/Screenshot_1.png)
+![Profile Page](./frontend/public/assets/images/image1.png)
 
-![Summary Page](./frontend/public/assets/images/Screenshot_2.png)
+![Summary Page](./frontend/public/assets/images/image2.png)
 
-![Skills Page](./frontend/public/assets/images/Screenshot_3.png)
+![Skills Page](./frontend/public/assets/images/image3.png)
+
+![Projects Page](./frontend/public/assets/images/image4.png)
 
 ## Building
 
